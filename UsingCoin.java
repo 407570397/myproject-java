@@ -150,8 +150,16 @@ public class DiceCounter {
             System.out.println(n);
             counters[n-1]++;
         }
+        int max = 0;
+        int point = max;
         for (int i = 0; i < 6; i++) {
-            System.out.println((i+1)+" "+counters[i]+"times");
+//            System.out.println((i+1)+" "+counters[i]+"times");
+            if (counters[i]>max){
+                max = counters[i];
+                counters[i] = point;
+                point = max;
+                System.out.println((i+1)+" "+max+"times");
+            }
         }
     }
 }
