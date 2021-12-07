@@ -137,18 +137,21 @@ public class UsingCoin {
         }
     }
 }
-package project;
+package Project;
 
 import java.util.Random;
 
-public class dice {
+public class DiceCounter {
     public static void main(String[] args) {
         Random random = new Random();
-        int[] answer = {1, 2, 3, 4, 5, 6};
+        int[] counters = new int[6];
         for (int i = 0; i < 10; i++) {
-            int dice = random.nextInt(6)+1;
-            System.out.println(dice);
+            int n = random.nextInt(6)+1;
+            System.out.println(n);
+            counters[n-1]++;
         }
-       
+        for (int i = 0; i < 6; i++) {
+            System.out.println((i+1)+" "+counters[i]+"times");
+        }
     }
 }
