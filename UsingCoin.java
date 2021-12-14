@@ -194,23 +194,21 @@ public class main {
     public static void main(String[] args) {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 13; j++) {
+                String tt = "c";
                 switch (i){
-                    case 0:
-                        System.out.print(j+"c ");
-                        break;
                     case 1:
-                        System.out.print(j+"d ");
+                        tt = "d";
                         break;
                     case 2:
-                        System.out.print(j+"h ");
+                        tt = "h";
                         break;
                     case 3:
-                        System.out.print(j+"s ");
+                        tt = "s";
                         break;
                 }
+                System.out.print((j+1)+tt+" ");
             }
             System.out.println();
         }
     }
 }
-
