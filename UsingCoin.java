@@ -226,3 +226,6 @@ public class main {
         }
     }
 }
+//unicode
+        int n = 0x00A9;
+        System.out.println((char) n);
