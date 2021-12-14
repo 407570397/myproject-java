@@ -186,3 +186,31 @@ public class Sorting {
         }
     }
 }
+
+//撲克花色
+package project;
+
+public class main {
+    public static void main(String[] args) {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 13; j++) {
+                switch (i){
+                    case 0:
+                        System.out.print(j+"c ");
+                        break;
+                    case 1:
+                        System.out.print(j+"d ");
+                        break;
+                    case 2:
+                        System.out.print(j+"h ");
+                        break;
+                    case 3:
+                        System.out.print(j+"s ");
+                        break;
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
