@@ -230,3 +230,54 @@ public class main {
         }
     }
 }
+
+//1221
+
+import java.util.Random;
+
+public class Dice {
+    int point = 1;
+    public void roll(){
+//        System.out.println("rolling");
+        Random random = new Random();
+        point = random.nextInt(6)+1;
+    }
+    public boolean isMax(){
+        if (point == 6){
+            return true;
+        }else {
+            return false;
+        }
+    }
+}
+public class Roll {
+    public static void main(String[] args) {
+        int[] counters = new int[6];
+        for (int i = 0; i < 10; i++) {
+            Dice dice = new Dice();
+            Dice d2 = new Dice();
+            dice.roll();
+            System.out.print(dice.point);
+            String s = dice.isMax() ? "*" : "" ;
+            System.out.println(s);
+//            if (dice.isMax()){
+//                System.out.println("*");
+//            }else {
+//                System.out.println();
+//            }
+            counters[dice.point-1]++;
+        }
+//        int max = 0;
+//        int point = max;
+//        for (int i = 0; i < 6; i++) {
+//            if (counters[i] > max) {
+//                max = counters[i];
+//                counters[i] = point;
+//                point = max;
+//                System.out.println((i + 1) + " " + max + "times");
+//            }
+//        }
+    }
+}
+
+
