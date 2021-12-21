@@ -280,4 +280,54 @@ public class Roll {
     }
 }
 
+import java.util.Random;
 
+public class Guess {
+    Random random = new Random();
+    int secret = random.nextInt(10)+1;
+    boolean end = false;
+    public int guess(int n){
+        return n - secret;
+    }
+    public boolean bigger(int n){
+        if (n == secret){
+            end = true;
+        }
+        if (n > secret){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public boolean smaller(int n) {
+        if (n == secret) {
+            end = true;
+        }
+        return n < secret;
+    }
+}
+
+import java.util.Scanner;
+
+public class Guess1To10 {
+    public static void main(String[] args) {
+        Guess guess = new Guess();
+        Scanner scanner = new Scanner(System.in);
+        int n = 0;
+        int counter =0;
+        while (!guess.end){
+            System.out.println("Please Enter");
+            String s = scanner.next();
+            n = Integer.parseInt(s);
+            int diff = guess.guess(n);
+            if (diff > 0){
+                System.out.println("Samller");
+            } else if (diff < 0){
+                System.out.println("Bigger");
+            } else {
+                System.out.println("Bingo");
+            }
+            counter++;
+        }
+    }
+}
